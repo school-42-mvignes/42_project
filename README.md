@@ -3,7 +3,7 @@
 # 42_project
 
 ## objective
-Lancer tout les projets realiser depuis n'importe ou dans le terminal
+Launch all completed projects from anywhere in the terminal
 
 ## Description
 
@@ -13,7 +13,7 @@ Lancer tout les projets realiser depuis n'importe ou dans le terminal
 
 
 ### Challenges
-- **Adapter au lancement general:** Pour plusieurs projet, surtout les graphiques, on ecrit du code en dure en donnant la localisation d'une image, il a donc falus du modifier le code pour ne pas segfault. Le changement sur fedora m'a compliquer la tache car la minibilix ne voulais plus compiler correctement
+- **Adapter au lancement general:** For several projects, especially graphics, hard code is written by giving the location of an image, so the code had to be modified to avoid segfault. The change on Fedora complicated my task because the minifiai no longer wanted to compile properly.
 
 
 ### Project Structure
@@ -63,7 +63,7 @@ export PATH=$PATH:/home/mvignes/.local/42_project:/home/mvignes/.local/funcheck/
 ```bash
 born
 
-push_swap #liste de nombre qui peut etre separer par des is space et avoir plusieurs chaine de caractere
+push_swap #list of numbers that can be separated by spaces and have several strings
 
 pipex infile "cmd1" "cmd2" "cmd3" "cmd..." outfile
 or
@@ -92,4 +92,4 @@ minishell
 
 #### Artificial intelligence (Gemini) was used for the following tasks : Understanding of the subject and help with the translation into English of the README.
 
-	Technical translation of the content.
+	No.
