@@ -10,12 +10,6 @@ Lancer tout les projets realiser depuis n'importe ou dans le terminal
 
 ### Features
 - **Command Execution:** Full project execute ; born, push_swap, pipex, fdf, philo, philo_bonus, minishell.
-- **Built-ins:** `cd`, `echo`, `pwd`, `export`, `unset`, `env`, `exit`.
-- **Pipes & Redirections:** Support for `|`, `>`, `<`, `>>`, and `<<`.
-- **Logical Operators:** Implementation of `&&` and `||` with parentheses for priority.
-- **Wildcards:** Pattern matching using the `*` character.
-- **Environment Management:** Variable expansion and exit status handling (`$?`).
-- **Signal Handling:** Proper management of interrupts in both interactive and execution modes.
 
 
 ### Challenges
