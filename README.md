@@ -35,6 +35,7 @@ Launch all completed projects from anywhere in the terminal
 │	├── philosohpers/		# Directory all code for project philo and philo_bonus
 │	├── pipex/				# Directory all code for project pipex
 │	└── push_swap/			# Directory all code for project push_swap
+└──	README.md				# Readme
 ```
 
 ### file .bashrc
