@@ -27,7 +27,7 @@ RM			= rm -f
 
 MAKEFLAGS	+= --no-print-directory
 
-WHITE		= \003[0;00m
+WHITE		= \033[0;07m
 BLACK		= \033[0;30m
 RED			= \033[0;31m
 GREEN		= \033[0;32m
