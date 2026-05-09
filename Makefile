@@ -169,7 +169,7 @@ git:
 	}'))
 	@git commit -m "$(MSG)"
 	@git push -u origin $(shell git rev-parse --abbrev-ref HEAD)
-	@echo "Cela bien etait push avec le commit :\n$(MSG)"
+	@printf "$(GRAS)$(GREEN)Cela bien etait push avec le commit :\n$(RESET)$(MSG)"
 
 #===========================================# proubleme "ASSII"
 #  ___       _      ___          _ _ 	   ||
