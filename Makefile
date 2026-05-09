@@ -146,12 +146,15 @@ fun:
 
 # Fait des git add all et commit les new file, modif and delete, en specifiant dans quel partie du repertoire ca etait fait
 git:
-	@echo "$(CYAN)Analyse des changements par projet...$(RESET)"
+	@echo "$(CYAN)Analyse des changements...$(RESET)"
 	@git add .
 	$(eval MSG := $(shell git status --porcelain | awk '{ \
 		n = split($$2, path, "/"); \
 		proj = "Root"; \
-		for (i=1; i<n; i++) { if (path[i] == "Code") { proj = path[i+1]; break; } } \
+		found = 0; \
+		for (i=1; i<n; i++) { \
+			if (path[i] == "Code") { proj = path[i+1]; found = 1; break; } \
+		} \
 		file = path[n]; \
 		if ($$1 == "A" || $$1 == "??") new[proj] = new[proj] file " "; \
 		else if ($$1 == "M") mod[proj] = mod[proj] file " "; \
