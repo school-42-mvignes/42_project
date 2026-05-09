@@ -71,7 +71,7 @@ for c in $CMD; do
 		elif [ "$p" = "project_code" ]; then
 			CHEMIN_PROJECT="/home/mvignes/.local/42_project/Code"
 		else
-		    	CHEMIN_PROJECT="$BASE_PATH/$p"
+			CHEMIN_PROJECT="$BASE_PATH/$p"
 		fi
 		if [ "$c" = "PWD" ]; then
 			alias "${c}_${p}"="(cd ${CHEMIN_PROJECT} && pwd)"
