@@ -40,9 +40,12 @@ Launch all completed projects from anywhere in the terminal
 
 ### file .bashrc
 ```bash
-born() {
-	local DISK_PATH="/run/media/mvignes/KINGSTON/born2beroot/b2b"
+#flatpak list | grep -i code
 
+# Fonction pour lancer Born2beroot
+born()
+{
+	local DISK_PATH="/run/media/mvignes/KINGSTON/born2beroot/b2b"
 	local VM_NAME="b2b"
 
 	if [ -d "$DISK_PATH" ]; then
@@ -53,6 +56,31 @@ born() {
 		echo "Vérifie le chemin : $DISK_PATH"
 	fi
 }
+
+### creation d'alias
+BASE_PATH="/home/mvignes/.local/42_project/Code"
+PROJECTS="push_swap pipex fdf philosophers philo philo_bonus minishell cub3d project project_code "
+CMD="cd code tree ls PWD"
+
+for c in $CMD; do
+	for p in $PROJECTS; do
+		if [ "$p" = "philo" ] || [ "$p" = "philo_bonus" ]; then
+			CHEMIN_PROJECT="$BASE_PATH/philosophers/$p"
+		elif [ "$p" = "project" ]; then
+			CHEMIN_PROJECT="/home/mvignes/.local/42_project"
+		elif [ "$p" = "project_code" ]; then
+			CHEMIN_PROJECT="/home/mvignes/.local/42_project/Code"
+		else
+		    	CHEMIN_PROJECT="$BASE_PATH/$p"
+		fi
+		if [ "$c" = "PWD" ]; then
+			alias "${c}_${p}"="(cd ${CHEMIN_PROJECT} && pwd)"
+		else
+			alias "${c}_${p}"="${c} ${CHEMIN_PROJECT}"
+		fi
+		echo "Alias creer : ${c}_${p}"
+	done
+done
 
 export PATH=$PATH:/home/mvignes/.local/42_project:/home/mvignes/.local/funcheck/host
 ```
