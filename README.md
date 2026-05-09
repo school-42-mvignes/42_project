@@ -59,10 +59,11 @@ born()
 
 ### creation d'alias
 BASE_PATH="/home/mvignes/.local/42_project/Code"
-PROJECTS="push_swap pipex fdf philosophers philo philo_bonus minishell cub3d project project_code "
-CMD="cd code tree ls PWD"
+PROJECTS="push_swap pipex fdf philosophers philo philo_bonus minishell cub3d project project_code cub3d"
+CMD="cd code tree ls PWD bat"
 
 for c in $CMD; do
+	echo "       Alias ${c}"
 	for p in $PROJECTS; do
 		if [ "$p" = "philo" ] || [ "$p" = "philo_bonus" ]; then
 			CHEMIN_PROJECT="$BASE_PATH/philosophers/$p"
@@ -75,14 +76,18 @@ for c in $CMD; do
 		fi
 		if [ "$c" = "PWD" ]; then
 			alias "${c}_${p}"="(cd ${CHEMIN_PROJECT} && pwd)"
+		elif [ "$c" = "bat" ]; then
+			alias "${c}_${p}"="(cd ${CHEMIN_PROJECT} && bat */*)"
 		else
 			alias "${c}_${p}"="${c} ${CHEMIN_PROJECT}"
 		fi
 		echo "Alias creer : ${c}_${p}"
 	done
+	echo ""
 done
 
 export PATH=$PATH:/home/mvignes/.local/42_project:/home/mvignes/.local/funcheck/host
+
 ```
 ---
 
