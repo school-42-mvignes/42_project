@@ -162,13 +162,14 @@ git:
 	} END { \
 		out = ""; \
 		for (p in new) out = out "New in " p ": " new[p] "| "; \
-		for (p in mod) out = out "Mod in " p ": " mod[p] "| "; \
-		for (p in del) out = out "Del in " p ": " del[p] "| "; \
+		for (p in mod) out = out "Modif in " p ": " mod[p] "| "; \
+		for (p in del) out = out "Delete in " p ": " del[p] "| "; \
 		if (out == "") out = "Auto-push: updates"; \
 		print out; \
 	}'))
 	@git commit -m "$(MSG)"
 	@git push -u origin $(shell git rev-parse --abbrev-ref HEAD)
+	@echo "Cela bien etait push avec le commit :\n$(MSG)"
 
 #===========================================# proubleme "ASSII"
 #  ___       _      ___          _ _ 	   ||
