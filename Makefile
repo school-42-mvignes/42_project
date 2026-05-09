@@ -144,29 +144,26 @@ fun:
 	@make re
 	@funcheck ./cub3d -c maps/test_map.cub
 
-# Variables pour les couleurs (optionnel, pour la lisibilité)
-GREEN  := \033[0;32m
-RESET  := \033[0m
-
+# Fait des git add all et commit les new file, modif and delete, en specifiant dans quel partie du repertoire ca etait fait
 git:
-	@echo "$(GREEN)Analyse des changements...$(RESET)"
+	@echo "$(CYAN)Analyse des changements par projet...$(RESET)"
 	@git add .
-	$(eval MSG := $(shell git status --porcelain | awk '\
-		{ \
-			n = split($$2, path, "/"); \
-			name = path[n]; \
-			if ($$1 == "A" || $$1 == "??") new = new name " "; \
-			else if ($$1 == "M") mod = mod name " "; \
-			else if ($$1 == "D") del = del name " "; \
-		} \
-		END { \
-			res = ""; \
-			if (new) res = res "New: " new "; "; \
-			if (mod) res = res "Mod: " mod "; "; \
-			if (del) res = res "Del: " del "; "; \
-			if (res == "") res = "Auto-push: no changes"; \
-			print res; \
-		}'))
+	$(eval MSG := $(shell git status --porcelain | awk '{ \
+		n = split($$2, path, "/"); \
+		proj = "Root"; \
+		for (i=1; i<n; i++) { if (path[i] == "Code") { proj = path[i+1]; break; } } \
+		file = path[n]; \
+		if ($$1 == "A" || $$1 == "??") new[proj] = new[proj] file " "; \
+		else if ($$1 == "M") mod[proj] = mod[proj] file " "; \
+		else if ($$1 == "D") del[proj] = del[proj] file " "; \
+	} END { \
+		out = ""; \
+		for (p in new) out = out "New in " p ": " new[p] "| "; \
+		for (p in mod) out = out "Mod in " p ": " mod[p] "| "; \
+		for (p in del) out = out "Del in " p ": " del[p] "| "; \
+		if (out == "") out = "Auto-push: updates"; \
+		print out; \
+	}'))
 	@git commit -m "$(MSG)"
 	@git push -u origin $(shell git rev-parse --abbrev-ref HEAD)
 
