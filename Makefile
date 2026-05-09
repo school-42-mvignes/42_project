@@ -27,6 +27,7 @@ RM			= rm -f
 
 MAKEFLAGS	+= --no-print-directory
 
+WHITE		= \003[0;00m
 BLACK		= \033[0;30m
 RED			= \033[0;31m
 GREEN		= \033[0;32m
@@ -169,7 +170,7 @@ git:
 	}'))
 	@git commit -m "$(MSG)"
 	@git push -u origin $(shell git rev-parse --abbrev-ref HEAD)
-	@printf "$(GRAS)$(GREEN)Cela bien etait push avec le commit :\n$(RESET)$(MSG)"
+	@printf "$(GREEN)$(GRAS)Cela bien etait push avec le commit :\n$(RESET)$(WHITE)$(MSG)"
 
 #===========================================# proubleme "ASSII"
 #  ___       _      ___          _ _ 	   ||
