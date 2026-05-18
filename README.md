@@ -4,11 +4,11 @@
 
 ## Table of contents
 
-1. [Information sur le projet] (#Objective)
-2. [Information sur l'execution du projet] (#Instruction)
-3. [Information sur les resources utiliser pour realiser le projet] (#Resources)
+1. [Information sur le projet] (#objective)
+2. [Information sur l'execution du projet] (#instruction)
+3. [Information sur les resources utiliser pour realiser le projet] (#resources)
 
-## objective
+## Objective
 Launch all completed projects from anywhere in the terminal
 
 ## Description
