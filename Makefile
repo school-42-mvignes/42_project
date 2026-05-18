@@ -145,6 +145,7 @@ fun:
 	@make re
 	@funcheck ./cub3d -c maps/test_map.cub
 
+
 # Fait des git add all et commit les new file, modif and delete, en specifiant dans quel partie du repertoire ca etait fait
 git:
 	@echo "$(CYAN)Analyse des changements...$(RESET)"
@@ -170,7 +171,8 @@ git:
 	}'))
 	@git commit -m "$(MSG)"
 	@git push -u origin $(shell git rev-parse --abbrev-ref HEAD)
-	@printf "$(GREEN)$(GRAS)Cela bien etait push avec le commit :\n$(RESET)$(WHITE)$(MSG)"
+	@printf "\n\n$(GREEN)$(GRAS)Cela bien etait push avec le commit :\n$(RESET)$(WHITE)$(MSG)$(RESET)"
+
 
 #===========================================# proubleme "ASSII"
 #  ___       _      ___          _ _ 	   ||
@@ -260,4 +262,4 @@ user42:
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re bash stats des val mi fun name_ascii user42
+.PHONY: all clean fclean re bash stats des val mi fun git name_ascii user42

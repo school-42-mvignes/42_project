@@ -2,6 +2,12 @@
 
 # 42_project
 
+## Table of contents
+
+1. [Information sur le projet] (#Objective)
+2. [Information sur l'execution du projet] (#Instruction)
+3. [Information sur les resources utiliser pour realiser le projet] (#Resources)
+
 ## objective
 Launch all completed projects from anywhere in the terminal
 
@@ -14,7 +20,6 @@ Launch all completed projects from anywhere in the terminal
 
 ### Challenges
 - **Adapter au lancement general:** For several projects, especially graphics, hard code is written by giving the location of an image, so the code had to be modified to avoid segfault. The change on Fedora complicated my task because the minifiai no longer wanted to compile properly.
-
 
 ### Project Structure
 ```bash
@@ -45,7 +50,7 @@ Launch all completed projects from anywhere in the terminal
 # Fonction pour lancer Born2beroot
 born()
 {
-	local DISK_PATH="/run/media/mvignes/KINGSTON/born2beroot/b2b"
+	local DISK_PATH="/run/media/mvignes/KINGSTON/42/vm/born2beroot/b2b"
 	local VM_NAME="b2b"
 
 	if [ -d "$DISK_PATH" ]; then
@@ -81,12 +86,16 @@ for c in $CMD; do
 		else
 			alias "${c}_${p}"="${c} ${CHEMIN_PROJECT}"
 		fi
-		echo "Alias creer : ${c}_${p}"
+		#echo "Alias creer : ${c}_${p}"
 	done
-	echo ""
+	#echo ""
 done
 
+alias "terminal"="/home/mvignes/.local/42_project/srcs/lancer_terminal.sh"
+alias "cd_exam"="cd /home/mvignes/Documents/github/Exam/rank03"
+
 export PATH=$PATH:/home/mvignes/.local/42_project:/home/mvignes/.local/funcheck/host
+
 
 ```
 ---
