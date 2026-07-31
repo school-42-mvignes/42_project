@@ -117,6 +117,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_LIB) -o $(NAME)
 # 	@$(MAKE) name_ascii;
 # 	@$(MAKE) user42;
+	$(shell sleep 2)
 	@$(MOUV)
 	@printf "🍀\033[32m Compiling completed \033[0m🍀\n"
 

@@ -6,7 +6,7 @@
 /*   By: mvignes <mvignes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 14:48:41 by mvignes           #+#    #+#             */
-/*   Updated: 2026/07/31 17:24:40 by mvignes          ###   ########.fr       */
+/*   Updated: 2026/07/31 17:40:18 by mvignes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*search_my_path(char *path)
 	if (!ft_strcmp(path, "matrix"))
 		return ("/home/mvignes/.local/42_project/srcs/cub3d_map/good/matrix.cub");
 	if (!ft_strcmp(path, "subject"))
-		return ("/home/mvignes/.local/42_project/srcs/cub3d_map/good/subject.cub");
+		return ("/home/mvignes/.local/42_project/srcs/cub3d_map/good/subject_map.cub");
 }
 
 /// @brief The main for the best project "Cub3D" of all 42 !
