@@ -61,14 +61,28 @@ born()
 		echo "Vérifie le chemin : $DISK_PATH"
 	fi
 }
+# Fonction pour lancer Inception
+inc()
+{
+	local DISK_PATH="/run/media/mvignes/KINGSTON/42/vm/inception/Inception"
+	local VM_NAME="Inception"
+
+	if [ -d "$DISK_PATH" ]; then
+		echo "✅ Disque détecté. Lancement de $VM_NAME..."
+		VBoxManage startvm "$VM_NAME"
+	else
+		echo "❌ Erreur : Le disque dur n'est pas branché ou le dossier est inaccessible."
+		echo "Vérifie le chemin : $DISK_PATH"
+	fi
+}
 
 ### creation d'alias
 BASE_PATH="/home/mvignes/.local/42_project/Code"
-PROJECTS="push_swap pipex fdf philosophers philo philo_bonus minishell cub3d project project_code cub3d"
+PROJECTS="push_swap pipex fdf philosophers philo philo_bonus minishell cub3d project project_code Cub3d"
 CMD="cd code tree ls PWD bat"
 
 for c in $CMD; do
-	echo "       Alias ${c}"
+	echo "		Alias ${c}"
 	for p in $PROJECTS; do
 		if [ "$p" = "philo" ] || [ "$p" = "philo_bonus" ]; then
 			CHEMIN_PROJECT="$BASE_PATH/philosophers/$p"
@@ -95,8 +109,6 @@ alias "terminal"="/home/mvignes/.local/42_project/srcs/lancer_terminal.sh"
 alias "cd_exam"="cd /home/mvignes/Documents/github/Exam/rank03"
 
 export PATH=$PATH:/home/mvignes/.local/42_project:/home/mvignes/.local/funcheck/host
-
-
 ```
 ---
 

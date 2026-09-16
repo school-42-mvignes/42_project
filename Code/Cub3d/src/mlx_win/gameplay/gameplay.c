@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gameplay.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vignesmattheu <vignesmattheu@student.42    +#+  +:+       +#+        */
+/*   By: mvignes <mvignes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 17:34:39 by lyaberge          #+#    #+#             */
-/*   Updated: 2026/07/13 08:06:14 by vignesmatth      ###   ########.fr       */
+/*   Updated: 2026/08/10 17:50:51 by mvignes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	game_loop(t_game *game)
 	init_speed(game);
 	key_moove(game);
 	#ifdef LINUX
-	//mouse_moove(game);
+	mouse_moove(game);
 	#endif
 	game_loop_action(game, &has_moved, &mona_has_moved, &munch_has_moved);
 	if (game->moved || has_moved || game->bool_key.view_key_press
