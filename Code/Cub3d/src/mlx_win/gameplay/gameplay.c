@@ -108,7 +108,7 @@ int	game_loop(t_game *game)
 	mouse_moove(game);
 	#endif
 	game_loop_action(game, &has_moved, &mona_has_moved, &munch_has_moved);
-	if (game->moved || has_moved || game->bool_key.view_key_press
+	if (game->moved || has_moved
 		|| mona_has_moved || munch_has_moved)
 	{
 		if (display_check(game) == ERROR)

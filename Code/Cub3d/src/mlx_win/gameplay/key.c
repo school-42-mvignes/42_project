@@ -35,7 +35,9 @@ int	keyno(int key, t_game *game)
 		game->bool_key.shift = false;
 	if (key == DOOR)
 		game->bool_key.door = false;
-		
+	if (game->bool_key.view_key_press)
+		if (display_check(game) == ERROR)
+			return (ERROR);
 	return (OK);
 }
 
@@ -90,6 +92,9 @@ int	display_keywee(int key, t_game *game)
 	if (key == VIEW_KEY_PRESS)
 		toggle(&game->bool_key.view_key_press);
 	wall_anim(key, game);
+	if (game->bool_key.view_key_press || key == VIEW_KEY_PRESS)
+		if (display_check(game) == ERROR)
+			return (ERROR);
 	return (OK);
 }
 
@@ -121,6 +126,8 @@ int	keywee(int key, t_game *game)
 		game->bool_key.door = true;
 		game->anim_is_finish = false;
 		game->bool_key.change_hand = true;
+		game->phone.frame_id = 0;
+		game->phone.nb_of_loop = 0;
 	}
 	if (display_keywee(key, game) == ERROR)
 		return (ERROR);
